@@ -1,0 +1,115 @@
+variables:
+  LANG: en_US.UTF-8
+  LANGUAGE: en_US:en
+  LC_ALL: en_US.UTF-8
+  GIT_SUBMODULE_STRATEGY: recursive
+  DEBIAN_FRONTEND: noninteractive
+
+
+stages:
+  - test
+  - docs
+  - deploy
+
+test_20:
+  stage: test
+  image: gitlab.globalways.net:4567/ia/docker-poetry/u2004:latest
+  services:
+    - name: rabbitmq:3.7
+      alias: rabbitmq
+    - name: memcached:1.5
+      alias: memcached
+    - name: postgres:13
+      alias: postgres
+  variables:
+    POSTGRES_DB: ccdb
+    POSTGRES_USER: ccdb
+    POSTGRES_PASSWORD: ccdb
+    POSTGRES_HOST: postgres
+    DJANGO_SETTINGS_MODULE: ccdb.settings.citest
+    MEMCACHED_LOCATION: memcached:11211
+
+  script:
+    - . $HOME/.poetry/env
+    - poetry --version
+    # Update poetry to > 1.1 since the pyproject.toml is generated with a newer version and breaks with poetry < 1.1
+    - curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py -o /tmp/get-poetry.py
+    - python3 /tmp/get-poetry.py --version 1.1.11 --yes
+    - . $HOME/.poetry/env
+    - poetry install
+    - cd ccdb
+    - poetry run coverage erase
+    - poetry run ./manage.py compilemessages
+    - poetry run pytest -c pytest-ci.ini --cov '.' --suppress-no-test-exit-code
+  except:
+    - schedules
+  coverage: '/TOTAL.+ ([0-9]{1,3}%)/'
+
+
+docs:
+  stage: docs
+  image: gitlab.globalways.net:4567/ia/docker-poetry/u2004:latest
+  script:
+    - . $HOME/.poetry/env
+    - poetry --version
+    # Update poetry to > 1.1 since the pyproject.toml is generated with a newer version and breaks with poetry < 1.1
+    - curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py -o /tmp/get-poetry.py
+    - python3 /tmp/get-poetry.py --version 1.1.11 --yes
+    - . $HOME/.poetry/env
+    - poetry install
+    - cd docs
+    - poetry run make html
+  artifacts:
+    paths:
+      - docs/_build/html
+    expire_in: 1 days
+  except:
+    - schedules
+
+
+archive_docs:
+  stage: deploy
+  script:
+    - tar cpzf docs.tar.gz docs/_build/html
+  artifacts:
+    paths:
+      - docs.tar.gz
+    expire_in: 7 days # latest build is always kept
+  dependencies:
+    - docs
+  only:
+    - master
+
+
+deploy_dev:
+  stage: deploy
+  image: docker.intern.dc1.com:15444/ia/dcic/dcic:latest
+  services:
+    - name: docker:18.09.7-dind
+      alias: docker
+  before_script:
+    - cd ~
+    - mkdir -p .ssh
+    - eval $(ssh-agent -s)
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\tForwardAgent yes\n\n" > ~/.ssh/config'
+    - echo "$STAGING_PRIVATE_KEY" | ssh-add -
+    - echo "$VAULT_TOKEN" > ~/.vault_token
+    - git clone git@gitlab.globalways.net:ia/dci-meta.git $HOME/dci-meta
+    - cd -
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" docker.intern.dc1.com:15444
+    - ln -s $CI_PROJECT_DIR $HOME/ccdb
+    - cd $HOME/ccdb
+    - git checkout $CI_COMMIT_REF_NAME
+    - git reset --hard origin/$CI_COMMIT_REF_NAME
+    - git pull
+  script:
+    - dcic service deploy ccdb dev --block -1 --interval 5
+    - dcic nomad exec ccdb dev celery "cd /poetry/ && poetry run /code/manage.py migrate && poetry run /code/manage.py create_dev_users"
+  only:
+    - master
+  tags:
+    # required by dind
+    - privileged
+  except:
+    - schedules
+  resource_group: deploy_dev

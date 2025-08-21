@@ -1,0 +1,70 @@
+name: Tests
+
+on:
+  push:
+    branches: [ gw ]
+  pull_request:
+    branches: [ gw ]
+  workflow_dispatch:
+    inputs: {}
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+
+env:
+  FORCE_COLOR: 1
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Tests
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: [3.9, '3.10', 3.11]
+        database: [sqlite, postgres]
+        exclude:
+          - database: sqlite
+            python-version: 3.9
+          - database: sqlite
+            python-version: 3.11
+    steps:
+      - uses: actions/checkout@v3
+      - uses: harmon758/postgresql-action@v1
+        with:
+          postgresql version: '14'
+          postgresql db: 'ccdb'
+          postgresql user: 'ccdb'
+          postgresql password: 'ccdb'
+        if: matrix.database == 'postgres'
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install poetry
+        uses: abatilo/actions-poetry@v2
+      - name: Install system dependencies
+        run: |
+          sudo apt update
+          sudo apt install gettext
+      - name: Install dependencies
+        run: poetry install --with test
+      - name: Run tests
+        working-directory: ./ccdb
+        run: poetry run pytest -nauto -p no:sugar --reruns 3
+        env:
+          CCDB_DATABASE: '${{ matrix.database }}'
+          DJANGO_SETTINGS_MODULE: 'ccdb.settings.citest'
+      - name: Show coverage as build info
+        working-directory: ./ccdb
+        run: |
+          poetry run coverage json
+
+          export TOTAL_COV=$(poetry run python -c "import json;print(json.load(open('coverage.json'))['totals']['percent_covered_display'])")
+          echo "TOTAL_COV=$TOTAL_COV" >> $GITHUB_ENV
+          echo "## Test coverage: $TOTAL_COV%" >> $GITHUB_STEP_SUMMARY
+          poetry run coverage report --skip-covered --skip-empty --show-missing --format=markdown >> $GITHUB_STEP_SUMMARY
+
+          poetry run coverage report --fail-under=60
+        if: matrix.database == 'postgres' && matrix.python-version == '3.10'

@@ -1,0 +1,2 @@
+def common(request):
+    return {}

@@ -1,0 +1,18 @@
+version: '3'
+services:
+  django:
+    entrypoint: bash -c "while true; do poetry run python3 /code/manage.py runserver 0.0.0.0:8080; sleep 3; done"
+    volumes:
+      - ./ccdb:/code/
+      - ./poetry.lock:/poetry/poetry.lock
+      - ./pyproject.toml:/poetry/pyproject.toml
+      - ./app_storage:/persistence/do-backup
+    ports:
+      - 8106:8080
+  #celery:
+  #  entrypoint: tail -f /dev/null
+  #celery_beat:
+  #  entrypoint: tail -f /dev/null
+  postgres:
+    ports:
+      - 15432:5432

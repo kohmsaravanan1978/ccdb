@@ -1,0 +1,538 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: cleanuppo.py\n"
+
+msgid "in realisation"
+msgstr "in Realisierung"
+
+msgid "active"
+msgstr "aktiv"
+
+msgid "accounting paused"
+msgstr "Abrechnung pausiert"
+
+msgid "terminated"
+msgstr "gekündigt"
+
+msgid "ended"
+msgstr "ausgelaufen"
+
+msgid "search"
+msgstr "Suche"
+
+msgid "valid from"
+msgstr "gültig von"
+
+msgid "valid till"
+msgstr "gültig bis"
+
+msgid "termination date"
+msgstr "Kündigungsdatum"
+
+msgid "valid_from"
+msgstr "gültig ab"
+
+msgid "valid_till"
+msgstr "gültig bis"
+
+msgid ""
+"leave empty when if you it should be valid as long as the contract is valid"
+msgstr ""
+"Leer lassen, falls Vertragsposten bis zum Ende der Vertragslaufzeit gültig "
+"sein soll"
+
+msgid "Customer with customer number {} does not exist"
+msgstr "Kunde mit Kundennummer {} existiert nicht"
+
+msgid ""
+"customer SEPA information requirements are not met. Can not enable SEPA for "
+"this contract"
+msgstr ""
+"SEPA informationen für diesen Kunden sind unvollständig. SEPA kann nicht "
+"aktiviert werden"
+
+msgid "contract {} differs from collective invoice"
+msgstr "Vertrag {} unterscheidet sich von Sammelrechnung"
+
+msgid "A not realized contract must not have enabled accounting"
+msgstr ""
+"Ein nicht realisierter Vertrag darf die Abrechnung nicht aktiviert haben"
+
+msgid "When there is a termination date set, there must be a contract end date"
+msgstr ""
+"Fall ein Kündigungsdatum existiert, muss es auch ein Vertragsende geben"
+
+msgid "contract valid from date must before valid till"
+msgstr "Vertragssstart muss vor dem Vertragsende liegen"
+
+msgid "contract \"{}\" (pk={}) item have conflicting value. (Error is: {})"
+msgstr ""
+"Vertragsposten \"{}\" (pk={}) hat wiedersprüchliche Werte. (Fehler war: {})"
+
+msgid "no delivery"
+msgstr "keine Zustellung"
+
+msgid "via mail"
+msgstr "via E-Mail"
+
+msgid "via post"
+msgstr "via Post"
+
+msgid "not started"
+msgstr "nicht gestartet"
+
+msgid "accounting deactivated"
+msgstr "Abrechnung deaktiviert"
+
+msgid "undefined"
+msgstr "undefiniert"
+
+msgid "status"
+msgstr "Status"
+
+msgid "customer number"
+msgstr "Kundennummer"
+
+msgid "contract number"
+msgstr "Vertragsnummer"
+
+msgid "customer reference"
+msgstr "Kundenreferenz"
+
+msgid "minimum contract duration"
+msgstr "Mindestvertragslaufzeit"
+
+msgid "notice period"
+msgstr "Kündigungsfrist"
+
+msgid "automatic extension"
+msgstr "automatische Verlängerung"
+
+msgid "accounting period"
+msgstr "Abrechnungszeitraum"
+
+msgid "comment"
+msgstr "Kommentar"
+
+msgid "sepa enabled"
+msgstr "SEPA aktiviert"
+
+msgid "collective invoice"
+msgstr "Sammelrechnung"
+
+msgid "is realized"
+msgstr "ist realisiert"
+
+msgid "accounting enabled"
+msgstr "Abrechnung aktiv"
+
+msgid "invoice delivery"
+msgstr "Rechnungszustellung"
+
+msgid "contract"
+msgstr "Vertrag"
+
+msgid "contracts"
+msgstr "Verträge"
+
+msgid "alternativ delivery contact"
+msgstr "alternativer Zustellungskontakt"
+
+msgid "contract client"
+msgstr "Mandant"
+
+msgid "contract clients"
+msgstr "Mandanten"
+
+msgid "A contract with mixed 0% and not 0% vat is not allowed"
+msgstr ""
+"Ein Vertrag mit einer Mischung aus 0% und nicht-0% Vertragsposten ist nicht "
+"erlaubt"
+
+msgid "valid from date must be after valid from date of the contract"
+msgstr "gültig von muss nach dem start des Vertrags liegen"
+
+msgid "valid till date of the contract must be after valid till date"
+msgstr ""
+"gültig bis Wert des Vertrags muss nach dem gültig bis Wert des "
+"Vertragsposten sein"
+
+msgid "consistency error: contract item has invalid type"
+msgstr "Konsistenzfehler: Vertragsposten hat ungültigen Typ"
+
+msgid "valid from date must before valid till"
+msgstr "gültig-von-Wert muss nach gültig-bis Wert sein"
+
+msgid "only full cent prices are supported"
+msgstr "Nur volle Centbeträge werden unterstützt"
+
+msgid "once"
+msgstr "einmalig"
+
+msgid "recuring_fixed"
+msgstr "wiederkehrend fest"
+
+msgid "recuring_variable"
+msgstr "wiederkehrend variable"
+
+msgid "unknown"
+msgstr "unbekannt"
+
+msgid "planed"
+msgstr "geplant"
+
+msgid "name"
+msgstr "Name"
+
+msgid "customer description"
+msgstr "Kundenbeschreibung"
+
+msgid "contract item type"
+msgstr "Vertragspostentyp"
+
+msgid "cost center"
+msgstr "Kostenstelle"
+
+msgid "net price"
+msgstr "Nettopreis"
+
+msgid "KPI value kva"
+msgstr "KPI Wert kva"
+
+msgid "KPI value kwh"
+msgstr "KPI Wert kwh"
+
+msgid "KPI value sqm"
+msgstr "KPI Wert sqm"
+
+msgid "KPI value type"
+msgstr "KPI Wert type"
+
+msgid "contract_item_singular"
+msgstr "Vertragsposten"
+
+msgid "contract_item_plural"
+msgstr "Vertragsposten"
+
+msgid "customer"
+msgstr "Kunde"
+
+msgid "contract name"
+msgstr "Vertragsname"
+
+msgid "Easybill status"
+msgstr "Easybill Status"
+
+msgid "Unknown customer"
+msgstr "Unbekannter Kunde"
+
+msgid "contract item name"
+msgstr "Vertragspostenname"
+
+msgid "description"
+msgstr "Beschreibung"
+
+msgid "activate contract"
+msgstr "Vertrag aktivieren"
+
+msgid "activate"
+msgstr "aktivieren"
+
+msgid ""
+"The contract will activated and the accounting will start according to the "
+"contract start/end dates."
+msgstr ""
+"Der Vertrag wird aktiviert und die Abrechnung anhand der Vertragsdaten "
+"gestartet."
+
+msgid "history"
+msgstr "Historie"
+
+msgid "all objects"
+msgstr "Alle Objekte"
+
+msgid "contract list"
+msgstr "Vertragsliste"
+
+msgid "create_contract"
+msgstr "Vertrag erstellen"
+
+msgid "attention"
+msgstr "Achtung"
+
+#, python-format
+msgid ""
+"This form will change all %(contract_item_count)s positions of the contract"
+msgstr ""
+"Dieses Formular ändert ALLE %(contract_item_count)s Positionen des Vertrags"
+
+msgid "migrate contract"
+msgstr "Vertrag umstellen"
+
+msgid "direct link to"
+msgstr "direkter Link zu"
+
+msgid "contract_item_type"
+msgstr "Vertragsposten Typ"
+
+msgid "accounting_period"
+msgstr "Abbrechnungsintervall"
+
+msgid "month"
+msgstr "Monat"
+
+msgid "net_price"
+msgstr "Nettopreis"
+
+msgid "billing_data"
+msgstr "Billing Daten"
+
+msgid ""
+"Contract is not yet realized. Verify contract data and activate it to start "
+"accounting"
+msgstr ""
+"Vertrag ist noch nicht realisiert. Vertragsdaten prüfen und Vertrag "
+"aktivieren um die Abrechnung zu starten"
+
+msgid "Accounting for this contract is disabled"
+msgstr "Abrechnung ist für diesen Vertrag deaktiviert"
+
+msgid "RZM/GNOM technical docs"
+msgstr "RZM/GNOM technische Doku"
+
+msgid "client"
+msgstr "Mandant"
+
+msgid "RZM master data"
+msgstr "RZM Stammdaten"
+
+msgid "summary"
+msgstr "Zusammenfassung"
+
+msgid "Easybill"
+msgstr "Easybill"
+
+msgid "Easybill data are loaded"
+msgstr "Easybill Daten sind geladen"
+
+msgid "Easybill data are only loaded on request"
+msgstr "Easybill Daten werden nur auf Anfrage geladen"
+
+msgid "load now"
+msgstr "jetzt laden"
+
+msgid "Easybill master data entry"
+msgstr "Easybill Stammdateneintrag"
+
+msgid "RZM CRM entry is missing"
+msgstr "RZM CRM Eintrag fehlt"
+
+msgid "setup invoice status"
+msgstr "Setuprechnung Status"
+
+msgid "recurring invoice"
+msgstr "wiederkehrende Rechnung"
+
+msgid "Easybill invoicing settings"
+msgstr "Easybill Rechnungseinstellungen"
+
+msgid "alternative easybill address for THIS contract"
+msgstr "Alternative Easybill Adresse für DIESEN Vertrag"
+
+msgid "Could not load alternative contact"
+msgstr "Konnte alternativen Kontakt nicht laden"
+
+msgid "to"
+msgstr "nach"
+
+msgid "standard customer invoice delivery address"
+msgstr "Standard Rechnungsadresse"
+
+msgid "see"
+msgstr "siehe"
+
+msgid "customer invoice delivery data"
+msgstr "Kunden Rechnungsaddresse"
+
+msgid "contract is accounted on its own"
+msgstr "Vertrag wird für sich selbst abgerechnet"
+
+msgid "contract is accounted with"
+msgstr "Vertrag wird abgerechnet mit"
+
+msgid "rules for recurring collective invoice"
+msgstr "Regeln für wiederkehrende Sammelrechnungen"
+
+msgid "valid"
+msgstr "gültig"
+
+msgid "contract start"
+msgstr "Vertragsstart"
+
+msgid "contract end"
+msgstr "Vertragsende"
+
+msgid "easybill position"
+msgstr "Easybill Position"
+
+msgid "contract items"
+msgstr "Vertragsposten"
+
+msgid "recurring items"
+msgstr "wiederkehrende Posten"
+
+msgid "usage-dependent"
+msgstr "verbrauchsabhängig"
+
+msgid "migrate positions"
+msgstr "Positionen umstellen"
+
+msgid "canceled at"
+msgstr "gekündigt am"
+
+msgid "earliest contract end"
+msgstr "frühestes Vertragsende"
+
+msgid "next cancelation date"
+msgstr "nächster Kündigungstermin"
+
+msgid "next possible contract end"
+msgstr "nächstes mögliches Vertragsende"
+
+msgid "minimum duration"
+msgstr "Mindestlaufzeit"
+
+msgid "months"
+msgstr "Monate"
+
+msgid "invoicing data"
+msgstr "Rechnungsdaten"
+
+msgid "street"
+msgstr "Straße"
+
+msgid "zip code"
+msgstr "Postleitzahl"
+
+msgid "city"
+msgstr "Stadt"
+
+msgid "address suffix 1"
+msgstr "Adresszusatz 1"
+
+msgid "address suffix 2"
+msgstr "Adresszusatz 2"
+
+msgid "invoice mail"
+msgstr "Rechnungsmail"
+
+msgid "SEPA is confirmed"
+msgstr "SEPA ist bestätigt"
+
+msgid "SEPA account owner"
+msgstr "SEPA Accountinhaber"
+
+msgid "SEPA bank name"
+msgstr "SEPA Bankname"
+
+msgid "SEPA bank BIC"
+msgstr "SEPA BIC"
+
+msgid "SEPA bank IBAN"
+msgstr "SEPA IBAN"
+
+msgid "SEPA reference"
+msgstr "SEPA Referenz"
+
+msgid "history start"
+msgstr "Historie start"
+
+msgid "changed"
+msgstr "geändert"
+
+msgid "created"
+msgstr "erstellt"
+
+msgid "... and more"
+msgstr "... und mehr"
+
+#, python-format
+msgid ""
+"%(field)s <span class=\"text-bold\">changed from</span> %(from)s <span class="
+"\"text-bold\">to</span> %(to)s"
+msgstr ""
+"%(field)s <span class=\"text-bold\">geändert von</span> %(from)s <span class="
+"\"text-bold\">in</span> %(to)s"
+
+msgid "contract files"
+msgstr "Vertragsdateien"
+
+msgid "setup invoice was before Easybill"
+msgstr "Setuprechung war vor der Einführung von Easybill"
+
+msgid "setup invoice is 0€"
+msgstr "Setuprechnung hat 0€"
+
+msgid "no setup invoice"
+msgstr "keine Setuprechnung"
+
+msgid "no setup cost contract items"
+msgstr "keine Vertragsposten für Setup"
+
+msgid "there are local changes not synced to easybill"
+msgstr ""
+"Es existieren lokale Änderungen, die noch nicht nach Easybill synchronisiert "
+"wurden"
+
+msgid "invoice not yet synced"
+msgstr "Rechnung noch nicht synchronisiert"
+
+msgid "no extra consumption {} - {}"
+msgstr "kein Mehrverbrauch {} - {}"
+
+msgid "there are inconsistent data on easybill!"
+msgstr "Es existieren inkonsistente Daten auf Easybill!"
+
+msgid "remote easybill customer differs!"
+msgstr "Easybill Kunde unterscheidet sich"
+
+msgid "remote easybill customer does not exist!"
+msgstr "Easybill Kunde existiert nicht"
+
+msgid "Could not fetch data from RZM"
+msgstr "Konnte Daten von RZM nicht abrufen"
+
+msgid "customer synchronized"
+msgstr "Kunde synchronisiert"
+
+msgid "recurring invoice syncronized"
+msgstr "wiederkehrende Rechnung synchronisiert"
+
+msgid "setup invoice already exists"
+msgstr "Setuprechnung existiert bereits"
+
+msgid "setup invoice created"
+msgstr "Setuprechnung erstellt"
+
+msgid "RZM is not available!"
+msgstr "RZM ist nicht verfügbar"
+
+msgid "Action not set!"
+msgstr "Aktion ist nicht definiert!"
+
+msgid "Contract {} is now active and will be accounted"
+msgstr "Vertrag {} ist jetzt aktiviert und wird abgerechnet"

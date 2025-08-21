@@ -1,0 +1,297 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: cleanuppo.py\n"
+
+msgid "mail"
+msgstr "Post"
+
+msgid "e-mail"
+msgstr "E-Mail"
+
+msgid "easybill"
+msgstr "Easybill"
+
+msgid "Change Manager"
+msgstr "Change Manager"
+
+msgid "Advice Manager"
+msgstr "Advice Manager"
+
+msgid "Permanent"
+msgstr "Permanent"
+
+msgid "Advisable Person"
+msgstr "Avisierbare Person"
+
+msgid "Guest"
+msgstr "Gast"
+
+msgid "Temporary"
+msgstr "Temporär"
+
+msgid "INITIAL STATE (this is caused by an erroneous creation)"
+msgstr ""
+
+msgid "Enter a comma-separated list of integers"
+msgstr "Kommaseparierte Liste ganzer Zahlen eingeben"
+
+msgid "ID is in"
+msgstr "ID ist in"
+
+msgid "optional"
+msgstr "optional"
+
+msgid "active directory guid"
+msgstr "Active Directory GUID"
+
+msgid "active diretory guid profile"
+msgstr "Active Directory GUID Profil"
+
+msgid "active diretory guid profiles"
+msgstr "Active Directory GUID Profile"
+
+msgid "dc1 review state"
+msgstr "DC1 Review"
+
+msgid "customer review state"
+msgstr "Kunden Review"
+
+msgid "created"
+msgstr "Erstellt"
+
+msgid "in review"
+msgstr "In Review"
+
+msgid "rejected"
+msgstr "Abgelehnt"
+
+msgid "withdrawn"
+msgstr "Zurückgezogen"
+
+msgid "accepted"
+msgstr "Akzeptiert"
+
+msgid "review state"
+msgstr "Review Status"
+
+msgid "create"
+msgstr "erstellen"
+
+msgid "update"
+msgstr "ändern"
+
+msgid "delete"
+msgstr "löschen"
+
+msgid "open"
+msgstr "Offen"
+
+msgid "dismissed"
+msgstr "abgelehnt"
+
+msgid "closed"
+msgstr "geschlossen"
+
+msgid "old object"
+msgstr "Altes Objekt"
+
+msgid "new object"
+msgstr "Neues Objekt"
+
+msgid "overall state"
+msgstr "Gesamtstatus"
+
+msgid "ticket number"
+msgstr "Ticketnummer"
+
+msgid "data"
+msgstr "Daten"
+
+msgid "user"
+msgstr "Benutzer"
+
+msgid "CSP-Report"
+msgstr ""
+
+msgid "CSP-Reports"
+msgstr ""
+
+msgid "Two possible transitions found"
+msgstr "2 mögliche Transitionen entdeckt"
+
+msgid "No possible transition found"
+msgstr "Keine mögliche Transition entdeckt"
+
+msgid "deleted"
+msgstr "gelöscht"
+
+msgid "deleted at"
+msgstr "Gelöscht am"
+
+msgid "deployment date"
+msgstr ""
+
+msgid "service deployment"
+msgstr ""
+
+msgid "edit"
+msgstr "editieren"
+
+msgid "filter"
+msgstr "filter"
+
+msgid "history date"
+msgstr "Datum"
+
+msgid "history change reason"
+msgstr "Änderungsgrund"
+
+msgid "history user"
+msgstr "Benutzer"
+
+msgid "History"
+msgstr "Historie"
+
+msgid "state"
+msgstr ""
+
+msgid "old"
+msgstr "alt"
+
+msgid "new"
+msgstr "neu"
+
+msgid "{{ model_name }}"
+msgstr ""
+
+msgid "{{ model_name }}s"
+msgstr ""
+
+#, python-format
+msgid "create %(verbose_name)s"
+msgstr "%(verbose_name)s anlegen"
+
+#, python-format
+msgid "create and add another %(verbose_name)s"
+msgstr "speichern und zurück um neuen %(verbose_name)s anlegen"
+
+#, python-format
+msgid "Edit %(verbose_name)s"
+msgstr "%(verbose_name)s bearbeiten"
+
+#, python-format
+msgid "List %(verbose_name)s"
+msgstr "%(verbose_name)s-Liste"
+
+msgid "name"
+msgstr "Name"
+
+msgid "export"
+msgstr "Exportieren"
+
+msgid "first"
+msgstr "erste"
+
+msgid "previous"
+msgstr "vorherige"
+
+msgid "Page"
+msgstr "Seite"
+
+#, python-format
+msgid "of %(total)s"
+msgstr "von %(total)s"
+
+msgid "next"
+msgstr "nächste"
+
+msgid "last"
+msgstr "letzte"
+
+#, python-format
+msgid "%(verbose_name)s list "
+msgstr "%(verbose_name)s Liste"
+
+#, python-format
+msgid ""
+"\n"
+"                %(action)s\n"
+"            "
+msgstr ""
+"\n"
+"                %(action)s\n"
+"            "
+
+msgid "cancel"
+msgstr "abbrechen"
+
+#, python-format
+msgid "update %(verbose_name)s: %(object)s"
+msgstr "%(verbose_name)s bearbeiten: %(object)s"
+
+#, python-format
+msgid "update %(verbose_name)s"
+msgstr "%(verbose_name)s bearbeiten"
+
+msgid "Cancel/Back"
+msgstr "Abbrechen"
+
+msgid "previous page"
+msgstr "Vorherige Seite"
+
+#, python-format
+msgid "page %(current)s of %(total)s"
+msgstr "Seite %(current)s von %(total)s"
+
+msgid "next page"
+msgstr "Nächste Seite"
+
+msgid "size"
+msgstr "Größe"
+
+msgid "label color"
+msgstr "Farbe"
+
+msgid "Download"
+msgstr "Herunterladen"
+
+#, python-format
+msgid "Search results for <strong>%(search_phrase)s</strong>"
+msgstr "Suchergebnisse für <strong>%(search_phrase)s</strong>"
+
+msgid "Search"
+msgstr "Suche"
+
+msgid "modified"
+msgstr "geändert"
+
+msgid "Print Label"
+msgstr "Label drucken"
+
+msgid "Delete failed for \"{}\": {}"
+msgstr "Löschen fehlgeschlagen für \"{}\": {}"
+
+#, python-brace-format
+msgid ""
+"Targeting undefined transition is possible: {model}, pk={pk}, target status "
+"code: {target_status_code}"
+msgstr ""
+"Versuch undefinierte Transition zu machen ist möglich: {model}, pk={pk}, "
+"target status code: {target_status_code}"
+
+msgid "Could not change status to {}"
+msgstr "Konnte Status nicht zu {} ändern"

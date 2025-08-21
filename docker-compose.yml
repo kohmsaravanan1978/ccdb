@@ -1,0 +1,55 @@
+version: '3'
+services:
+  django:
+    build: .
+    env_file:
+      - django.env
+    depends_on:
+      - postgres
+      - rabbitmq
+    ports:
+      - 8106:8080
+    volumes:
+      - ./app_storage:/persistence/do-backup
+    restart: unless-stopped
+  celery:
+    build: .
+    entrypoint: /entrypoint-celery.sh
+    env_file:
+      - django.env
+    depends_on:
+      - postgres
+      - rabbitmq
+    volumes:
+      - ./app_storage:/persistence/do-backup
+    restart: unless-stopped
+  celery_beat:
+    build: .
+    entrypoint: /entrypoint-celery_beat.sh
+    env_file:
+      - django.env
+    depends_on:
+      - postgres
+      - rabbitmq
+    volumes:
+      - ./app_storage:/persistence/do-backup
+    restart: unless-stopped
+  postgres:
+    image: postgres:12.9
+    environment:
+      - POSTGRES_DB=ccdb
+      - POSTGRES_USER=ccdb
+      - POSTGRES_PASSWORD=ccdb
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/:rw
+    restart: unless-stopped
+  rabbitmq:
+    image: rabbitmq:3.8-management
+    restart: unless-stopped
+  memcached:
+    image: memcached:1.5
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+
